@@ -5,7 +5,11 @@ function ShowResult() {
   const [htnum, setHtnum] = useState();
   const [studata, setData] = useState();
   let total
-  let avg
+  let avg_cgpa
+  let avg_proj
+  let avg_intern
+  let avg_leet
+  let avg_total
   const handleHTnum = () => {
     const formData = new FormData();
     formData.append("htnum", htnum);
@@ -20,15 +24,19 @@ function ShowResult() {
   };
 
   console.log(studata);
+  avg_cgpa = 8.25;
+  avg_proj = 2.2;
+  avg_intern = 0.6;
+  avg_leet = 100; 
 
   if (disresults && studata) {
     total = (parseFloat(studata.cgpa.split(",")[0])
       * (parseFloat(studata.proj.split(",")[0])
         + parseFloat(studata.intern.split(",")[0])
         + parseFloat(studata.leet.split(",")[0]) / 100)).toFixed(2);
-    avg = 35.47
+    avg_total = (avg_cgpa * (avg_proj + avg_intern + avg_leet / 100)).toFixed(2)
   }
-
+  
   return (
     <div className="results">
       <div className="form-input">
@@ -70,7 +78,7 @@ function ShowResult() {
                   : null}
               </td>
               <td>
-                8.25
+                {avg_cgpa}
               </td>
             </tr>
             <tr>
@@ -84,7 +92,7 @@ function ShowResult() {
                   : null}
               </td>
               <td>
-                2.2
+                {avg_proj}
               </td>
             </tr>
             <tr>
@@ -98,7 +106,7 @@ function ShowResult() {
                   : null}
               </td>
               <td>
-                0.6
+                {avg_intern}
               </td>
             </tr>
             <tr>
@@ -112,7 +120,7 @@ function ShowResult() {
                   : null}
               </td>
               <td>
-                150
+                {avg_leet}
               </td>
             </tr>
             <tr>
@@ -125,8 +133,13 @@ function ShowResult() {
             </tr>
             <tr>
               <td colSpan={4}>
-                {total > avg  ? "Congratulations! You are above average" : "Fail"}
-                </td>
+                {total > avg_total ? "Congratulations! You are above average" : "Fail"}
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={4}>
+              <iframe id="iframe" src="https://charts.mongodb.com/charts-proj-mgzbu/embed/dashboards?id=64b81369-0662-4098-83d2-c1fa6e5c973a&theme=light&autoRefresh=false&maxDataAge=-1&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale"></iframe>
+              </td>
             </tr>
           </tfoot>
         </table> : null}

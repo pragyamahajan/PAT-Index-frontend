@@ -121,3 +121,11 @@ td {
 tfoot {
   text-align: center;
 }
+
+#iframe {
+  background: #F1F5F4;
+  border: none;
+  border-radius: 1px;
+  width: 85vw;
+  height: 90vh;
+}
