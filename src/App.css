@@ -123,9 +123,9 @@ tfoot {
 }
 
 #iframe {
-  background: #F1F5F4;
+  background: #2629490c;
   border: none;
-  border-radius: 1px;
-  width: 85vw;
-  height: 90vh;
+  /* border-radius: 1px; */
+  width: 95vw;
+  height: 210vh;
 }

@@ -138,7 +138,7 @@ function ShowResult() {
             </tr>
             <tr>
               <td colSpan={4}>
-              <iframe id="iframe" src="https://charts.mongodb.com/charts-proj-mgzbu/embed/dashboards?id=64b81369-0662-4098-83d2-c1fa6e5c973a&theme=light&autoRefresh=false&maxDataAge=-1&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale"></iframe>
+              <iframe id="iframe" src="https://charts.mongodb.com/charts-proj-mgzbu/embed/dashboards?id=64bc1c82-1d8a-458c-873e-bee822be7abe&theme=light&autoRefresh=false&maxDataAge=-1&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale"></iframe>
               </td>
             </tr>
           </tfoot>
